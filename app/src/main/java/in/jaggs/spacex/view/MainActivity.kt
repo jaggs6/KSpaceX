@@ -10,7 +10,7 @@ class MainActivity : AppCompatActivity() {
 
     private val fragment1: Fragment = HomeFragment()
     private val fragment2: Fragment = AboutFragment()
-    var active = fragment2
+    var active = fragment1
     private val fm = supportFragmentManager
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         fm.beginTransaction()
             .add(R.id.main_container, fragment1, "1")
             .add(R.id.main_container, fragment2, "2")
-            .hide(fragment1)
+            .hide(fragment2)
             .commit()
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
     }
